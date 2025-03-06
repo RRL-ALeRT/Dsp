@@ -6,17 +6,17 @@ namespace dsp
 
 Dsp::Dsp() : Node("dsp")
 {
-    this->declare_parameter("map_topic", "octomap_full");
-    this->declare_parameter("spline_step", 0.01);
+    this->declare_parameter("map_topic", "/octomap_binary");
+    this->declare_parameter("spline_step", 0.1);
     this->declare_parameter("lower_thresh", 59);
     this->declare_parameter("upper_thresh", 60);
-    this->declare_parameter("risk", 2);
-    this->declare_parameter("RATE", 2000.0);
+    this->declare_parameter("risk", 3);
+    this->declare_parameter("RATE", 5000.0);
     this->declare_parameter("use_odometry", false);
     this->declare_parameter("use_3d", true);
-    this->declare_parameter("odom_topic", "odometry/imu");
-    this->declare_parameter("odom_frame_id", "map");
-    this->declare_parameter("base_link_frame_id", "base_link");
+    this->declare_parameter("odom_topic", "Spot/odometry");
+    this->declare_parameter("odom_frame_id", "odom");
+    this->declare_parameter("base_link_frame_id", "body");
     this->declare_parameter("DSP_UNKNOWN", 10000);
     this->declare_parameter("update_rate", 1);
     this->declare_parameter("debug", false);
